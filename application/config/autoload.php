@@ -73,7 +73,7 @@ $autoload['libraries'] = array("session", "database");
 |
 |	$autoload['drivers'] = array('cache');
 |
-| You can also supply an alternative property name to be assigned in
+| You can also supply an alternative property name to be assigned in 
 | the controller:
 |
 |	$autoload['drivers'] = array('cache' => 'cch');
@@ -89,7 +89,7 @@ $autoload['drivers'] = array("session");
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array("asset_helper", "url", "form", "language");
+$autoload['helper'] = array("asset_helper", "url", "form", "language", "snippets_helper");
 
 /*
 | -------------------------------------------------------------------
