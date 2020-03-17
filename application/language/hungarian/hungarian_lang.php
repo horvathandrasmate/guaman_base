@@ -1,4 +1,5 @@
 <?php
 
 $lang["test"] = "HUNGARIAN";
-$lang["hello"] = "hi, hungarian";
+$lang["welcome_message"] = "Üdvözöllek a ";
+$lang["login"] = "Bejelentkezés";
