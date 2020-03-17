@@ -73,13 +73,13 @@
         </div>
     </div>
 
-    <script src="vendor/animsition/js/animsition.min.js"></script>
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/daterangepicker/moment.min.js"></script>
-    <script src="vendor/daterangepicker/daterangepicker.js"></script>
-    <script src="vendor/countdowntime/countdowntime.js"></script>
-    <script src="js/main.js"></script>
+    <script src="<?php echo js_url("account/login/vendor/animsition/js/animsition.min.js")?>"></script>
+    <script src="<?php echo js_url("account/login/vendor/bootstrap/js/popper.js")?>"></script>
+    <script src="<?php echo js_url("account/login/vendor/select2/select2.min.js")?>"></script>
+    <script src="<?php echo js_url("account/login/vendor/daterangepicker/moment.min.js")?>"></script>
+    <script src="<?php echo js_url("account/login/vendor/daterangepicker/daterangepicker.js")?>"></script>
+    <script src="<?php echo js_url("account/login/vendor/countdowntime/countdowntime.js")?>"></script>
+    <script src="<?php echo js_url("account/login/js/main.js")?>"></script>
 
     <div id="dropDownSelect1"></div>
 
