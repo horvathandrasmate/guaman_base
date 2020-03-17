@@ -55,10 +55,10 @@ class Account extends CI_Controller
             }
             redirect(base_url("account/login"));
         } elseif (NULL !== $this->input->post('login')) {
-
+           
             $username = $this->input->post("username");
             $password = $this->input->post("password");
-            echo $username . $password;
+            
 
             try {
                 $this->Account_model->login($username, $password);
@@ -75,10 +75,9 @@ class Account extends CI_Controller
             $this->load->view("templates/footer");
         }
     }
-    public function register()
+    function logout()
     {
-        $this->load->view("templates/header");
-        $this->load->view("account/register");
-        $this->load->view("templates/footer");
+        $this->Account_model->logout();
+        redirect(base_url("account/login"));
     }
 }
