@@ -387,7 +387,7 @@ iframe {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-}
+} 
 
 .input-checkbox100:checked + .label-checkbox100::before {
   color: #555555;
@@ -403,6 +403,7 @@ iframe {
 .invisible{
   display:none;
 
+}
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
