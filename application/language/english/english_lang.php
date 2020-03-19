@@ -8,3 +8,4 @@ $lang["username"] = "Username";
 $lang["password"] = "Password";
 $lang["enter_password"] = "Enter password";
 $lang["enter_username"] = "Enter username";
+$lang["register"] = "Register";

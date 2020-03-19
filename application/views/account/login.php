@@ -10,11 +10,12 @@
 
 
 
-
-<div class="limiter">
+<!-- LOGIN FORM-->
+<div class="limiter" id="login-form-whole">
     <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
         <div class="wrap-login100">
             <form method="POST" id="login-form" class="login100-form validate-form">
+
 
                 <span class="login100-form-logo">
                     <i class="zmdi zmdi-landscape"></i>
@@ -39,7 +40,7 @@
                 <div class="contact100-form-checkbox">
                     <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
                     <label class="label-checkbox100" for="ckb1">
-                    <input name="login" class="invisible">
+                        <input name="login" class="invisible">
                         <?php echo lang("remember_me") ?>
 
                     </label>
@@ -52,21 +53,32 @@
 
                 </div>
 
-                <!-- <div class="text-center p-t-90">
-						<a class="txt1" href="#">
-							Forgot Password?
-						</a>
-					</div> -->
+                <div class="text-center p-t-90">
+                    <a class="txt1" onclick="show_register()" id="login-form-hider">
+                        <?php echo lang("register") ?>
+                    </a>
+                </div>
+
             </form>
         </div>
     </div>
 
 </div>
+<!--END OF LOGIN FORM-->
+<!-- REGISTER FORM-->
+
+
 <script>
-    function submit(){
+    function submit() {
         document.getElementById("login-submit").submit();
     }
-    </script>
+
+    function show_register() {
+        $("#login-form-whole").hide();
+
+    }
+</script>
+
 <script src="<?php echo js_url("account/login/vendor/animsition/js/animsition.min.js") ?>"></script>
 <script src="<?php echo js_url("account/login/vendor/bootstrap/js/popper.js") ?>"></script>
 <script src="<?php echo js_url("account/login/vendor/select2/select2.min.js") ?>"></script>

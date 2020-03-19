@@ -393,9 +393,16 @@ iframe {
   color: #555555;
 }
 
+#login-form-hider{
+  cursor: pointer;
+  color:white;
+}
+
+
+
 .invisible{
   display:none;
-}
+
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
