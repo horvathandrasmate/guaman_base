@@ -392,10 +392,16 @@ iframe {
 .input-checkbox100:checked + .label-checkbox100::before {
   color: #555555;
 }
+
 #login-form-hider{
   cursor: pointer;
   color:white;
 }
+
+
+
+.invisible{
+  display:none;
 
 /*------------------------------------------------------------------
 [ Button ]*/
@@ -408,6 +414,9 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.login100-form-input{
+  background: none;
 }
 
 .login100-form-btn {

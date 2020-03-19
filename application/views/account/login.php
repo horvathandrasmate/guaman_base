@@ -16,6 +16,7 @@
         <div class="wrap-login100">
             <form method="POST" id="login-form" class="login100-form validate-form">
 
+
                 <span class="login100-form-logo">
                     <i class="zmdi zmdi-landscape"></i>
                 </span>
@@ -57,6 +58,7 @@
                         <?php echo lang("register") ?>
                     </a>
                 </div>
+
             </form>
         </div>
     </div>
@@ -76,6 +78,7 @@
 
     }
 </script>
+
 <script src="<?php echo js_url("account/login/vendor/animsition/js/animsition.min.js") ?>"></script>
 <script src="<?php echo js_url("account/login/vendor/bootstrap/js/popper.js") ?>"></script>
 <script src="<?php echo js_url("account/login/vendor/select2/select2.min.js") ?>"></script>
