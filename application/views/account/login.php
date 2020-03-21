@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="text-center p-t-90">
-                    <a class="txt1" onclick="show_register()" id="login-form-hider">
+                    <a class="txt1" onclick="toggle_register_login()" id="login-form-hider">
                         <?php echo lang("register") ?>
                     </a>
                 </div>
@@ -66,6 +66,53 @@
 </div>
 <!--END OF LOGIN FORM-->
 <!-- REGISTER FORM-->
+<div class="limiter" id="register-form-whole">
+    <div class="container-register100" style="background-image: url('images/bg-01.jpg');">
+        <div class="wrap-register100">
+            <form method="POST" id="register-form" class="register100-form validate-form">
+
+
+                <span class="register100-form-logo">
+                    <i class="zmdi zmdi-landscape"></i>
+                </span>
+
+                <span class="register100-form-title p-b-34 p-t-27">
+
+                    <?php echo lang("register") ?>
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="<?php echo lang("enter_username") ?>">
+                    <input class="input100" type="text" name="username" placeholder="<?php echo lang("username") ?>">
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="<?php echo lang("enter_password") ?>">
+                    <input class="input100" type="password" name="password" placeholder="<?php echo lang("password") ?>">
+
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                </div>
+                </div>
+
+                <div class="container-register100-form-btn">
+
+                    <button class="register100-form-btn" onclick="submit()"><input class="register100-form-input" name="register" type="submit" value="<?php echo lang("register") ?>"></button>
+
+
+                </div>
+
+                <div class="text-center p-t-90">
+                    <a class="txt1" onclick="toggle_register_login()" id="login-form-hider">
+                        <?php echo lang("login") ?>
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- END OF REGISTER FORM -->
 
 
 <script>
@@ -73,8 +120,9 @@
         document.getElementById("login-submit").submit();
     }
 
-    function show_register() {
+    function toggle_register_login() {
         $("#login-form-whole").hide();
+        $("#register-form-whole").show();
 
     }
 </script>
