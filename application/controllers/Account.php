@@ -41,7 +41,7 @@ class Account extends CI_Controller
 
             if ($password != $repeat_password) {
                 $this->load->view("templates/header");
-                alert_swal("Passwords dont match");
+                alert_swal_error("Passwords dont match");
             }
             try {
                 $this->Account_model->register($username, $nice_user_name, $password, $email);
@@ -52,9 +52,10 @@ class Account extends CI_Controller
                 if ($e->getMessage() == "not_valid_email") alert_swal_error("Email not valid", "account/login");
                 if ($e->getMessage() == "username_match") alert_swal_error("Username Match", "account/login");
                 if ($e->getMessage() == "email_match") alert_swal_error("Email Match", "account/login");
+
             }
-            alert_swal_success("");
-            redirect(base_url("account/login"));
+            alert_swal_success("Sikeres regisztráció!", "account/login")
+       
         } elseif (NULL !== $this->input->post('login')) {
            
             $username = $this->input->post("username");
@@ -68,7 +69,7 @@ class Account extends CI_Controller
                 if ($e->getMessage() == "unknown_username") alert_swal_error("Unknown Username", "account/login");
                 die();
             }
-            redirect(base_url("account/profile"));
+            alert_swal_success("Sikeres bejelentkezés!", "account/login")
         } else {
 
             $this->load->view("templates/header");
