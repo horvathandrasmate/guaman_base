@@ -23,3 +23,4 @@ $lang["password_dont_match"] = "A jelszavak nem egyeznek";
 $lang["unknown_username"] = "Ismeretlen felhasználónév";
 $lang["successful_login"] = "Sikeres bejelentkezés";
 
+
