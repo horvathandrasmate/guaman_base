@@ -48,7 +48,7 @@
 
                 <div class="container-login100-form-btn">
 
-                    <button class="login100-form-btn" onclick="submit()"><input class="login100-form-input" name="login" type="submit" value="<?php echo lang("login") ?>"></button>
+                    <button class="login100-form-btn" ><input class="login100-form-input" name="login" type="submit" value="<?php echo lang("login") ?>"></button>
 
 
                 </div>
@@ -70,7 +70,7 @@
 <div class="limiter" id="register-form-whole">
 <div class="container-login100" style="background-image: url('<?php echo img_url("login-bg.jpg") ?>');">
         <div class="wrap-login100">
-            <form method="POST" id="login-form" class="login100-form validate-form">
+            <form method="GET" id="register-submit" class="login100-form validate-form">
 
 
                 <span class="login100-form-logo">
@@ -102,11 +102,11 @@
 
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
-
+                <input name="register" class="invisible">
 
                 <div class="container-login100-form-btn">
 
-                    <button class="login100-form-btn" onclick="submit()"><input class="login100-form-input" name="register" type="submit" value="<?php echo lang("register") ?>"></button>
+                    <button class="login100-form-btn" ><input class="login100-form-input" name="register" type="submit" value="<?php echo lang("register") ?>"></button>
 
 
                 </div>
@@ -128,9 +128,7 @@
 
 
 <script>
-    function submit() {
-        document.getElementById("login-submit").submit();
-    }
+    
 
     function toggle_register() {
         $("#login-form-whole").hide();
