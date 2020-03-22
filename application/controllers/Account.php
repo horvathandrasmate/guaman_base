@@ -54,7 +54,7 @@ class Account extends CI_Controller
                 if ($e->getMessage() == "email_match") alert_swal_error("Email Match", "account/login");
 
             }
-            alert_swal_success("Sikeres regisztráció!", "account/login")
+            alert_swal_success("Sikeres regisztráció!", "account/login");
        
         } elseif (NULL !== $this->input->post('login')) {
            
@@ -69,7 +69,7 @@ class Account extends CI_Controller
                 if ($e->getMessage() == "unknown_username") alert_swal_error("Unknown Username", "account/login");
                 die();
             }
-            alert_swal_success("Sikeres bejelentkezés!", "account/login")
+            alert_swal_success("Sikeres bejelentkezés!", "account/login");
         } else {
 
             $this->load->view("templates/header");
