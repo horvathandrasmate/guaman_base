@@ -83,7 +83,7 @@
                 </span>
 
                 <div class="wrap-input100 validate-input" data-validate="<?php echo lang("enter_nice_name") ?>">
-                    <input class="input100" type="text" name="nice-name" placeholder="<?php echo lang("nice_name") ?>">
+                    <input class="input100" type="text" name="nice_name" placeholder="<?php echo lang("nice_name") ?>">
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="<?php echo lang("enter_username") ?>">
@@ -106,7 +106,7 @@
 
                 <div class="container-login100-form-btn">
 
-                    <button class="login100-form-btn" onclick="submit()"><input class="login100-form-input" name="login" type="submit" value="<?php echo lang("register") ?>"></button>
+                    <button class="login100-form-btn" onclick="submit()"><input class="login100-form-input" name="register" type="submit" value="<?php echo lang("register") ?>"></button>
 
 
                 </div>
