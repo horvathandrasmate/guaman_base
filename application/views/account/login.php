@@ -63,6 +63,7 @@
         </div>
     </div>
 
+
 </div>
 <!--END OF LOGIN FORM-->
 <!-- REGISTER FORM-->
@@ -92,6 +93,7 @@
 
                 <div class="wrap-input100 validate-input" data-validate="<?php echo lang("enter_password") ?>">
                     <input class="input100" type="password" name="password" placeholder="<?php echo lang("password") ?>">
+
 
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
