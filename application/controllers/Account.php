@@ -47,11 +47,11 @@ class Account extends CI_Controller
                 $this->Account_model->register($username, $nice_user_name, $password, $email);
             } catch (Exception $e) {
 
-                if ($e->getMessage() == "not_valid_username") alert_swal_error("Username not valid", "account/login");
-                if ($e->getMessage() == "not_valid_nice_user_name") alert_swal_error("Real name not valid", "account/login");
-                if ($e->getMessage() == "not_valid_email") alert_swal_error("Email not valid", "account/login");
-                if ($e->getMessage() == "username_match") alert_swal_error("Username Match", "account/login");
-                if ($e->getMessage() == "email_match") alert_swal_error("Email Match", "account/login");
+                if ($e->getMessage() == "not_valid_username") alert_swal_error(lang("invalid_username"), "account/login");
+                if ($e->getMessage() == "not_valid_nice_user_name") alert_swal_error(lang("invalid_nice_name"), "account/login");
+                if ($e->getMessage() == "not_valid_email") alert_swal_error(lang("invalid_email"), "account/login");
+                if ($e->getMessage() == "username_match") alert_swal_error(lang("username_match"), "account/login");
+                if ($e->getMessage() == "email_match") alert_swal_error(lang("email_match"), "account/login");
 
             }
             alert_swal_success("Sikeres regisztráció!", "account/login");
@@ -65,11 +65,11 @@ class Account extends CI_Controller
             try {
                 $this->Account_model->login($username, $password);
             } catch (Exception $e) {
-                if ($e->getMessage() == "password_dont_match") alert_swal_error("Password dont match", "account/login");
-                if ($e->getMessage() == "unknown_username") alert_swal_error("Unknown Username", "account/login");
+                if ($e->getMessage() == "password_dont_match") alert_swal_error(lang("password_dont_match"), "account/login");
+                if ($e->getMessage() == "unknown_username") alert_swal_error(lang("unknown_username"), "account/login");
                 die();
             }
-            alert_swal_success("Sikeres bejelentkezés!", "account/login");
+            alert_swal_success(lang("successful_login"), "account/login");
         } else {
 
             $this->load->view("templates/header");
