@@ -205,8 +205,8 @@ class Account_model extends CI_Model
             throw new Exception("not_valid_email");
         }
 
-        $this->db->insert(self::$TABLE_NAME, array("username" => $username, "nice_user_name" => $nice_user_name, "email" => $email, "password" => encrypt($password)));
-        $this->db->insert(self::$LOG_TABLE_NAME, array('username' => $username, "date" => date('Y-m-d h:i:s'), "type" => 'register'));
+        $this->db->insert(self::$TABLE_NAME, array("username" => $username, "nice_name" => $nice_user_name, "email" => $email, "password" => encrypt($password)));
+       // $this->db->insert(self::$LOG_TABLE_NAME, array('username' => $username, "date" => date('Y-m-d h:i:s'), "type" => 'register'));
     }
 
     function get_profile($username)
