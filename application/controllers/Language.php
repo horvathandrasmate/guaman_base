@@ -40,6 +40,7 @@ class Language extends CI_Controller
             }
             foreach ($data_of_file as $data_key => $data_value) {
                 if ($this->Language_model->get_value_by_line_and_lang_id($data_key, $this->Language_model->get_lang_id_by_name($value)) == null) {
+                    echo $data_value."<br>";
                     $this->Language_model->upload_lang_file($data_key, $data_value, $this->Language_model->get_lang_id_by_name($value));
                 }                
             }

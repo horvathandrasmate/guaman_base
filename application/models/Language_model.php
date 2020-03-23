@@ -36,7 +36,7 @@ class Language_model extends CI_Model
        $result = $this->db->get(self::$TABLE_LANGS)->result_array();
        
         if (sizeof($result) > 0) {
-            echo $result[0]['value'];
+           
             return $result[0]['value'];
              
         };

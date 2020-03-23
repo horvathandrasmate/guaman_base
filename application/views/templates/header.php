@@ -7,7 +7,7 @@
         ?>
     </title>
 
-    <link rel="stylesheet" href="<?php echo css_url("bootstrap.min.css")?>" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo css_url("bootstrap.min.css")?>" integrity="anonymous" crossorigin="anonymous">
 
     <link
             href="<?php echo css_url("fonts.css")?>"
@@ -23,7 +23,7 @@
     <link href="<?php echo css_url("all.min.css")?>" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
-    <link href="<?php echo css_url("dataTables.bootstrap4.css")?>" rel="stylesheet">
+    <link href="<?php echo css_url("dataTables.bootstrap4.css")?>" rel="stylesheet"> 
 
     <!-- Custom styles for this template-->
     <link href="<?php echo css_url("sb-admin.min.css")?>" rel="stylesheet">

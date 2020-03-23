@@ -46,5 +46,17 @@ function flatten(array $array) {
     array_walk_recursive($array, function($a) use (&$return) { $return[] = $a; });
     return $return; 
 }
-
+function flatten_with_self(array $array){
+    $return = array();
+    foreach(flatten($array) as $key => $value){
+        $return[$value] = $value;
+    }
+    
+    return $return;
+}
+function console_log($message){
+    echo "<script>";
+    echo "console.log($message)";
+    echo "</script>";
+}
 ?>
