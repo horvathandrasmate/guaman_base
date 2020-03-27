@@ -17,6 +17,11 @@ class Account extends CI_Controller
         $this->load->model("Account_model");
         $this->load->model("Permissions_model");
     }
+    function manage(){
+        $this->load->view("templates/header");
+        $this->load->view("account/manage");
+        $this->load->view("templates/footer");
+    }
     public function profile()
     {
         if ($this->input->post('upload_permission') !== NULL) {

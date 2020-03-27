@@ -26,3 +26,6 @@ $lang["unknown_username"] = "Unknown username";
 $lang["successful_login"] = "Login successful";
 $lang["successful_registration"] = "Registration successful";
 $lang["passwords_dont_match"] = "Passwords don't match";
+$lang["edit"] = "Edit";
+$lang["delete"] = "Delete";
+$lang["insert"] = "Insert";

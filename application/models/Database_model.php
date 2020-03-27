@@ -96,6 +96,20 @@ class Database_model extends CI_Model
         }
         return $cols;
     }
+    function get_dataport_of_column($table_name, $column_name){
+        if (!$this->db->table_exists($table_name)) {
+            throw new Exception("table_not_found");
+        }
+        $result = $this->db->get_where(self::$TABLES_TABLE_NAME, array("table_name" => $table_name))->result_array();
+        $columns = explode(",", $result[0]["columns"]);
+        $dataports = explode(",", $result[0]["dataports"]);
+        foreach($columns as $key => $value){
+                if($value == $column_name){
+                    return $dataports[$key];
+                }
+        }
+        return false;
+    }
 
     
 }

@@ -26,5 +26,6 @@ $lang["unknown_username"] = "Ismeretlen felhasználónév";
 $lang["successful_login"] = "Sikeres bejelentkezés";
 $lang["successful_registration"] = "Sikeres regisztráció";
 $lang["passwords_dont_match"] = "A jelszavak nem egyeznek";
-
-
+$lang["edit"] = "Szerkesztés";
+$lang["delete"] = "Törlés";
+$lang["insert"] = "Beillesztés";

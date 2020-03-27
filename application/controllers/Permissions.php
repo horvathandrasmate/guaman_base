@@ -12,7 +12,7 @@ class Permissions extends CI_Controller{
 
     }
     function index(){
-        require_permission("admin");
+        //require_permission("admin");
         $this->load->view("templates/header");
         $this->load->view("templates/menu");
 

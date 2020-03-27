@@ -67,7 +67,7 @@ class Database extends CI_Controller
         }
         $this->load->helper("login");
         if (require_login()) {
-            require_permission("admin");
+            //require_permission("admin");
             $this->load->view('templates/header');
             $this->load->view('templates/menu');
             $data = $this->Database_model->get_table($table_name);
@@ -98,18 +98,31 @@ class Database extends CI_Controller
         if (require_login()) {
 
             $this->load->library("Datatables");
-            $aColumns = flatten($this->Database_model->get_columns($table_name));
-
-            $this->datatables->from($table_name);
-
-            echo $this->datatables->generate('json');
+            $this->load->model("Database_model");
+           
+            $result = $this->db->get($table_name)->result_array();
+            foreach($result as $key => $value){
+                $result[$key]["buttons"] = "<button class='btn btn-warning'>".lang("edit")."</button>";
+                $result[$key]["buttons"] .= "<button class='btn btn-danger'>".lang("delete")."</button>";
+            }
+            $iDraw = "0";
+            $recordsTotal = $this->db->count_all($table_name);
+            $recordsFiltered = $recordsTotal;
+           
+            echo json_encode(array(
+            "draw" => isset($iDraw) ? $iDraw : 1,
+            "recordsTotal" => $recordsTotal,
+            "recordsFiltered" => $recordsFiltered,
+            "data" => $result)
+            );
+            
         }
     }
 
     function add_table()
     {
         if (require_login()) {
-            require_permission("admin");
+            //require_permission("admin");
 
             if (NULL !== $this->input->post("submit_table")) {
 
@@ -141,6 +154,8 @@ class Database extends CI_Controller
             }
         }
     }
-
+    function test($text){
+        $this->session->set_userdata('text', "$text");
+    }
 
 }
