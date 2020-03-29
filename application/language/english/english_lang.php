@@ -29,3 +29,6 @@ $lang["passwords_dont_match"] = "Passwords don't match";
 $lang["edit"] = "Edit";
 $lang["delete"] = "Delete";
 $lang["insert"] = "Insert";
+$lang["done"] = "Done";
+$lang["cancel"] = "Cancel";
+$lang["insert_row"] = "Insert Row";

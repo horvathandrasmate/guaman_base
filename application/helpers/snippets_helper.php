@@ -1,7 +1,7 @@
 <?php
 function build_table($table_name)
 {
-    $CI = &get_instance();
+    $CI =& get_instance();
     $CI->load->model("Database_model");
     $table_columns = $CI->Database_model->get_columns($table_name);
     $table_columns_dataport_data = array();
@@ -82,6 +82,7 @@ function build_table($table_name)
     foreach ($table_columns as $key => $value) {
         echo "{'data':'$value'},\n";
     }
+    
     echo '
     {\'data\' : \'buttons\'}
                     ]
@@ -89,30 +90,58 @@ function build_table($table_name)
                 
             });
             function add_row(text){
-                function add_row() {
+                
                     Swal.fire({
-                        title: \'Add a row\',
+                        title: \''.lang("insert_row").'\',
                         icon: \'info\',
-                        html: \' <form> <div style="overflow-y: scroll; height:400px;" > <div class="permission-add-alert-div"> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput">Example label</label> <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"> </div> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput2">Another label</label> <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"> </div> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput2">Another label</label> <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"> </div> <hr> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput">Example label</label> <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"> </div> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput2">Another label</label> <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"> </div> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput2">Another label</label> <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"> </div> <br> </div> </div> </form> \',
+                        html: \'';
+                        // <form> <div style="overflow-y: scroll; height:400px;" > <div class="permission-add-alert-div"> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput">Example label</label> <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"> </div> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput2">Another label</label> <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"> </div> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput2">Another label</label> <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"> </div> <hr> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput">Example label</label> <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"> </div> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput2">Another label</label> <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"> </div> <div class="form-group "> <label class="permission-add-alert-label" for="formGroupExampleInput2">Another label</label> <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"> </div> <br> </div> </div> </form> \',
+                        echo '<form id="insert_row_form"><div style="overflow-y: auto; height:400px;"><div class="permission-add-alert-div"><input type="hidden" name="insert_row">';
+                        foreach($table_columns as $key => $value){
+                           //LABEL
+                            echo '<div class="form-group "><label class="'.$value.'-add-alert-label" for="formGroup'.$value.'Input">'.$value.'</label></div>';
+                           //INPUTS
+                            if ($value == "id") {
+                                echo "<input value=\'";
+                                echo flatten($CI->Database_model->get_last_row($table_name))[0]+1;
+                            echo "\' id=\'formGroup".$value."Input\' class=\'form-control\' name=\'$value\' readonly>";
+                            } else if (!sizeof($table_columns_dataport_data[$value]) > 0) {
+                                echo "<input type=\'text\' id=\'formGroup".$value."Input\' class=\'form-control\' name=\'$value\'>";
+                            } else {
+                                echo "<select name=\'$value-value\' class=\'form-control\' id=\'formGroup".$value."Input\'>";
+                                foreach ($table_columns_dataport_data[$value] as $key2 => $value2) {
+                                    echo "<option>" . flatten($table_columns_dataport_data[$value][$key2])[0] . "</option>";
+                                }
+                                echo "</select>";
+                            }
+                        }
+                            echo '</div></div></form>';
+                        
+                        echo '\',
                         showCloseButton: true,
                         showCancelButton: true,
                         focusConfirm: false,
-                        confirmButtonText: \'Kész\',
-                        cancelButtonText: \'Fixen nem\',
-                    })
-                }
-                $.ajax({
-                    url: \'".base_url("database/test/")."\' + text,
-                    data: \'channelType=1\',
-                    type: \'POST\',
-                    success: function(data) {
-                        $(\'#showdata\').html(data);
-                    },
-                    error: function(e) {
-                        alert(\'Error: \'+data);
-                    }  
-                });
-            }
+                        confirmButtonText: \''.lang("done").'\',
+                        cancelButtonText: \''.lang("cancel").'\',
+                    }).then((result) => {
+                        if (result.value) {
+                            var form = $("#insert_row_form");
+                            $.ajax({
+                                url: \''.base_url("database/upload_row/").'\',
+                                data: form.serialize(),
+                                type: \'POST\',
+
+                                success: function(data) {
+                                    $(\'#showdata\').html(data);
+                                },
+                                error: function(e) {
+                                    alert(\'Error: \'+data);
+                                }  
+                            });
+                        }
+                
+               
+            })}
         </script>
         <style>
     /* width /

@@ -89,6 +89,7 @@ class Database extends CI_Controller
         $this->dbforge->drop_table($table_name);
         redirect("account/admin");
     }
+    //API
     function get_table_json($table_name)
     {
         if ($table_name == "") {
@@ -154,8 +155,14 @@ class Database extends CI_Controller
             }
         }
     }
-    function test($text){
-        $this->session->set_userdata('text', "$text");
+    //API
+    function upload_row($condition){
+        $array_of_data = $this->input->post(NULL, TRUE);
+        try{
+            $this->Database_model->insert_or_update_row()
+        }catch(Exception $e){
+            if($e->getMessage("adsasd") == "") echo json_encode(array("error" => "aasdasdasd"));
+        }
     }
 
 }

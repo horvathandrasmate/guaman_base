@@ -29,3 +29,8 @@ $lang["passwords_dont_match"] = "A jelszavak nem egyeznek";
 $lang["edit"] = "Szerkesztés";
 $lang["delete"] = "Törlés";
 $lang["insert"] = "Beillesztés";
+$lang["done"] = "Kész";
+$lang["cancel"] = "Mégse";
+$lang["insert_row"] = "Sor Beillesztése";
+
+
